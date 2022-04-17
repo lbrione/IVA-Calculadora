@@ -1,0 +1,153 @@
+body {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Variables */
+:root {
+	--radius : 10px;
+	--colorPrimary: #EAEDED;
+	--colorSecundary: #D7D7D7;
+	--colorHover: #83C3FE55;
+	--proportion: 50px;
+}
+
+/* Quita las flehas de los inputs type number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+
+
+/* Contenedor principal del formulario */
+.form {
+	max-width: 400px;
+	margin: 20px;
+	padding: 15px;
+	border-radius: var(--radius);
+	font-family: tahoma, sans-serif;
+	font-size: 19px;
+	box-shadow: 0 0 10px #0005;
+	display: flex;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+
+
+
+
+
+/* propiedades globales para los contenedores */
+.amount,
+.iva,
+.result {
+	width: 100%;
+	height: var(--proportion);
+	border-radius: var(--radius);
+	margin: 10px;
+	background: var(--colorPrimary);
+	display: flex;
+	overflow: hidden;
+	/*outline: 1px solid red;*/
+}
+
+
+
+
+
+/* propiedades  globales de input */
+.amount__input,
+.iva__input {
+	border: none;
+	border-radius: var(--radius);
+	outline: none;
+	background: var(--colorPrimary);
+	transition: background .1s;
+}
+
+
+
+
+
+/* Input de cantidad */
+.amount__input {
+	height: 100%;
+	padding: 0 15px;
+	flex-grow: 1;
+
+}
+
+.amount__input:hover,.iva__input:hover{ background: var(--colorHover); }
+.amount__input:focus,.iva__input:focus { background: var(--colorHover); }
+
+.amount__iconDelete {
+	width: var(--proportion);
+	font-size: 30px;
+	transform: rotate(45deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: transform .2s, color .2s;
+	color: #555;
+	user-select: none;
+}
+
+.amount__iconDelete:hover { 
+	transform: rotate(45deg) scale(1.2);
+	color: #333;
+}
+
+
+
+
+
+/* Input de iva */
+.iva__input {
+	width: var(--proportion);
+	text-align: center;
+}
+
+.iva__symbol { 
+	line-height: var(--proportion);
+	margin-right: 10px;
+}
+
+.iva__amount {
+	padding: 0 15px;
+	background: var(--colorSecundary);
+	border-radius: var(--radius);
+	line-height: var(--proportion);
+	flex-grow: 1;
+}
+
+
+
+
+
+/* Caja de resultado */
+.result__total {
+	background: var(--colorSecundary);
+	border-radius: var(--radius);
+	flex-grow: 1;
+	line-height: var(--proportion);
+	padding: 0 15px;
+}
+
+.result-checkbox {
+	width: var(--proportion);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ckeckbox { 
+	width: 18px; 
+	height: 18px;
+}
