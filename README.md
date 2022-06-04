@@ -1,4 +1,4 @@
 # Carcular_IVA
-Calcula el iva para una cantidad o obtiene el iva de una cantidad.
+Agrega el iva a una cantidad o le quita el iva a una cantidad.
 
 * link: https://jesusbriones2.github.io/Calculadora_IVA/
