@@ -3,35 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora de Iva</title>
+	<title>Calculador de Iva</title>
 
-	<link rel="stylesheet" href="code/style/normalize.css">
-	<link rel="stylesheet" href="code/style/main.css">
+	<link rel="stylesheet" href="./code/normalize.css">
+	<link rel="stylesheet" href="./code/main.css">
 </head>
 <body>
-	
 
 
 	<form class="form">
-		<div class="amount">
-			<input id="amountInput" type="number" class="amount__input" placeholder="Cantidad (sin iva)">
-			<span id="iconDelete" class="amount__iconDelete">+</span>
+		<div class="form__container">
+			<input id="amountS" type="number" class="form__input" placeholder="Cantidad sin iva">
+			<span id="btnDelete" class="form__btnDelete">+</span>
 		</div>
-		<div class="iva">
-			<input id="inputIVA" type="number" class="iva__input" value="12">
-			<span class="iva__symbol">%</span>
-			<span id="ivaAmount" class="iva__amount">0</span>
+		<div class="form__container">
+			<input id="percIva" type="number" class="form__input" value="12">
+			<span class="form__symbol">%</span>
+			<span id="amountIva" class="form__amountIva">0</span>
 		</div>
-		<div class="result">
-			<span id="totalResult" class="result__total">0</span>
-			<div class="result-checkbox">
-				<input id="checkbox" class="ckeckbox" type="checkbox">
-			</div>
+		<div class="form__container">
+			<input id="amountN" class="form__input" placeholder="Cantidad con iva"></input>
 		</div>
 	</form>
+	
 
-
-	<script src="code/myl.js"></script>
-	<script src="code/script.js"></script>
+	<script src="./code/script.js"></script>
 </body>
 </html>

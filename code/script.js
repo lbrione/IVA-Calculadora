@@ -1,59 +1,39 @@
-// Obtencion de elementos html.
-const inputAmount = document.getElementById('amountInput');
-const inputIVA = document.getElementById('inputIVA');
-const ivaAmount = document.getElementById('ivaAmount');
-const totalResult = document.getElementById('totalResult');
+(() => {
 
+	const amountS = document.getElementById('amountS');
+	const amountN = document.getElementById('amountN');
+	const amountIva = document.getElementById('amountIva');
+	const percIva = document.getElementById('percIva');
+	let res, iva;
 
+	const calculate = (t) => {
 
-// Funcion del icono borrar.
-document.getElementById('iconDelete').addEventListener('click', () => {
-	amountInput.value = '';
-	calculateIVA();
-})
+		// Calcula el IVA y se lo suma a la cantidad.
+		if (t.id == 'amountS' || t.id == 'percIva') {
+			iva = parseFloat(amountS.value) * (parseFloat('0.' + percIva.value));
+			res = parseFloat(amountS.value) + iva;
+			amountN.value = isNaN(res) ? '':res.toFixed(2);
+		}
 
-// Funcion del checkbox.
-document.getElementById('checkbox').addEventListener('click', () => { calculateIVA(); })
+		// Calcula el IVA y se lo resta a la cantidad.
+		else if (t.id == 'amountN') {
+			res = parseFloat(amountN.value) / (parseFloat('1.' + percIva.value));
+			iva = parseFloat(amountN.value) - res;
+			amountS.value = isNaN(res) ? '': res.toFixed(2);
+		}
 
-
-
-// Evento de teclado de los inputs.
-inputAmount.addEventListener('keyup', calculateIVA);
-inputIVA.addEventListener('keyup', calculateIVA);
-
-
-
-// Funcion que hace el calulo del iva.
-// De una cantidad sin iva con el checkbox desactivado.
-// De una cantidad con iva con el checkbox activado.
-function calculateIVA () {
-
-	// obtendo la cantidad en el input catidad.
-	let amount = parseFloat( inputAmount.value );
-	let iva, res;
-
-	// Segun el checkbox activo o inactivo hace un calculo.
-	if ( checkbox.checked ) {
-		inputAmount.placeholder = 'Cantidad (con iva)';
-		res = amount / (parseFloat( '1.' + inputIVA.value ));
-		iva = amount - res;
-	} 
-	else { 
-		inputAmount.placeholder = 'Cantidad (sin iva)';
-		iva = amount * (parseFloat( '0.' + inputIVA.value ));
-		res = amount + iva;
+		amountIva.textContent = isNaN(iva) ? 0: iva.toFixed(2);
 	}
-
-	// Muestra los resultados en el formulario.
-	ivaAmount.textContent = iva.toFixed(2);
-	totalResult.textContent = res.toFixed(2);
-
-	// Impide escribir mas de dos numero en el input iva.
-	if ( inputIVA.value.length > 2 ) { inputIVA.value = inputIVA.value.slice(0,2) }
 	
-	// Si no hay una cantidad coloca en los resultados 0 para impedir mostar dato NAN.
-	if ( inputAmount.value == '' || inputIVA.value == '') { 
-		ivaAmount.textContent = 0; 
-		totalResult.textContent = 0;
-	}
-}
+	document.getElementById('btnDelete').addEventListener('click', () => {
+		amountS.value = amountN.value = '';
+		amountIva.textContent = 0;
+	});
+
+	document.addEventListener('keyup', (e) => {
+		let v = percIva.value; 
+		percIva.value = v.length > 2 ? v.slice(0,2): v;
+		calculate(e.target);
+	});
+	
+})();
