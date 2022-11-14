@@ -1,6 +1,6 @@
 # Carculadora de IVA
-Agrega o quita el iva a la cantidad ingresada en el campo.
+Calcula una cantidad con o sin IVA.
 
-* link: https://jesusbriones2.github.io/calculadora_iva/
+* Link : https://jesusbriones2.github.io/IVA_calculator/
 
 ![Page capture](./res/capture_page.png "Page capture")
