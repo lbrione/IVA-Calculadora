@@ -1,0 +1,135 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+	--color1: #eff2f2;
+	--hover: #d6ebf9;
+}
+
+/* Quita las flechas de los inputs type number */
+.calIVA input[type=number]::-webkit-inner-spin-button, 
+.calIVA input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+/* Contenedor principal del formulario */
+.calIVA {
+	max-width: 400px;
+	height: 250px;
+	margin: 50px auto 0;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #0006;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.calIVA * {
+	font-family: sans-serif;
+	font-size: 1.1em;
+}
+
+/* Contenedores dentro del formulario */
+.calIVA__cont {
+	height: 50px;
+	overflow: hidden;
+	border-radius: 10px;
+	background: var(--color1);
+	display: flex;
+}
+
+
+/* campos del formulario*/
+.calIVA__input {
+	border: none;
+	outline: none;
+	background-color: inherit;
+	transition: background-color .3s;
+	padding: 0 15px;
+	flex-grow: 1;
+}
+
+.calIVA__input:hover,
+.calIVA__input:focus { background: var(--hover); }
+
+
+.calIVA__iconx {
+	width: 50px;
+	font-size: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition-property: transform, color;
+	transition-duration: .3s;
+	transform: rotate(45deg);
+	color: #555;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+.calIVA__iconx:hover { 
+	transform: rotate(45deg) scale(1.2);
+	color: #333;
+}
+
+
+
+#percentageIVA {
+	width: 50px;
+	padding: 0 10px;
+	text-align: center;
+	flex-grow: 0;
+}
+
+.calIVA__symbol {
+	display: flex;
+	align-items: center;
+	margin-right: 15px;
+}
+
+
+.calIVA__amount {
+	padding: 0 15px;
+	flex-grow: 1;
+	background-color: #dcdcdc;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+
+@media screen and (max-width: 500px) {
+
+	body {
+		overflow: hidden;
+	}
+
+	.calIVA {
+		margin: 100px auto 0;
+		max-width: 90%;
+		box-shadow: none;
+	}
+
+	.calIVA__iconx {
+		transform: rotate(45deg) scale(1.6);
+	}
+
+	.calIVA__iconx:hover {
+		transform: rotate(45deg) scale(1.6);
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.calIVA {
+		max-width: 100%;
+	}
+}

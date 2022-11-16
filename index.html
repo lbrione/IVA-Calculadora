@@ -4,29 +4,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calculador de Iva</title>
-
-	<link rel="stylesheet" href="./code/normalize.css">
-	<link rel="stylesheet" href="./code/main.css">
+	<link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-
-	<form class="form">
-		<div class="form__container">
-			<input id="amountS" type="number" class="form__input" placeholder="Cantidad sin iva">
-			<span id="btnDelete" class="form__btnDelete">+</span>
+	<div class="calIVA">
+		<div class="calIVA__cont">
+			<input id="amountS" type="number" class="calIVA__input" placeholder="Cantidad sin iva">
+			<i id="iconx" class="calIVA__iconx">+</i>
 		</div>
-		<div class="form__container">
-			<input id="percIva" type="number" class="form__input" value="12">
-			<span class="form__symbol">%</span>
-			<span id="amountIva" class="form__amountIva">0</span>
+		<div class="calIVA__cont">
+			<input id="percentageIVA" type="number" class="calIVA__input" max="5" value="12">
+			<label class="calIVA__symbol">%</label>
+			<span id="amountIVA" class="calIVA__amount">0</span>
 		</div>
-		<div class="form__container">
-			<input id="amountN" class="form__input" placeholder="Cantidad con iva"></input>
+		<div class="calIVA__cont">
+			<input id="amountN" type="number" class="calIVA__input" placeholder="Cantidad con iva">
 		</div>
-	</form>
+	</div>
 	
-
-	<script src="./code/script.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
