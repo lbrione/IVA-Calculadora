@@ -54,6 +54,7 @@
 	transition: background-color .3s;
 	padding: 0 15px;
 	flex-grow: 1;
+	min-width: 100px;
 }
 
 .calIVA__input:hover,
@@ -83,6 +84,7 @@
 
 
 #percentageIVA {
+	min-width: 50px;
 	width: 50px;
 	padding: 0 10px;
 	text-align: center;
@@ -121,6 +123,7 @@
 
 	.calIVA__iconx {
 		transform: rotate(45deg) scale(1.6);
+		width: 65px;
 	}
 
 	.calIVA__iconx:hover {
